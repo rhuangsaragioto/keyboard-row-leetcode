@@ -10,14 +10,14 @@ vector<string> findWords(vector<string>& words) {
     std::vector<string> rows = {"qwertyuiop", "asdfghjkl", "zxcvbnm"};
     std::vector<string> result = {};
     
-    for (int i = 0; i < words.size(); i++) {
+    for (size_t i = 0; i < words.size(); i++) {
         std::string cword = words[i];
         
-        for (int k = 0; k < rows.size(); k++) {
+        for (size_t k = 0; k < rows.size(); k++) {
             bool found = true;
 
-            for (int j = 0; j < cword.size(); j++) {
-                if (rows[k].find(tolower(cword[j])) == std::string::npos) {
+            for (size_t j = 0; j < cword.size(); j++) {
+                if (rows[k].find((char)tolower(cword[j])) == std::string::npos) {
                     found = 0;
                     break;
                 }
