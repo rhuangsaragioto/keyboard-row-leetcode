@@ -1,7 +1,5 @@
 #include <vector>
-
 #include <string>
-
 #include <iostream>
 
 using namespace std;
@@ -9,12 +7,13 @@ using namespace std;
 vector<string> findWords(vector<string>& words) {
     std::vector<string> rows = {"qwertyuiop", "asdfghjkl", "zxcvbnm"};
     std::vector<string> result = {};
+    bool found;
     
     for (size_t i = 0; i < words.size(); i++) {
         std::string cword = words[i];
         
         for (size_t k = 0; k < rows.size(); k++) {
-            bool found = true;
+            found = 1;
 
             for (size_t j = 0; j < cword.size(); j++) {
                 if (rows[k].find((char)tolower(cword[j])) == std::string::npos) {
