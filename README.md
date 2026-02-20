@@ -90,7 +90,9 @@ If you're familiar with this problem or are just in general proficient in algori
 
 Thankfully, I was able to realize that and I flipped the middle loop and the inner most loop so that for each row, it was checking every character. The actual checking was also another part that got me stumped, mainly because I have a real hard time remembering the member functions of every STL data structure (such as the vector) and also of data types (such as the string), so I spent unnecessarily long researching to remind myself how I could check for a substring present within a string.
 
-Since the problem specified case-insensitivity, I thought that I should parse every character as its lower-case self to avoid false positives. I knew that I wanted to keep the loop going until I found a mismatch, since one **mismatch** is all it took for the word candidate to be invalidated. Therefore, I kept
+Since the problem specified case-insensitivity, I thought that I should parse every character as its lower-case self to avoid false positives. I knew that I wanted to keep the loop going until I found a mismatch, since one **mismatch** is all it took for the word candidate to be invalidated. Therefore, I kept a boolean variable `found` around that served to break me out of the character loop (because there's no point to keep checking once you found a mismatch), and so if not found i broke out of the loop.
+
+I also made a vector called `result` since LeetCode formatted its expected output as a list. Finally, I appended the word to the `result` vector if `found` was 1, and then I break out of the loop on the same condition to avoid checking the other rows for an already found word.
 
 ## Authors
 
